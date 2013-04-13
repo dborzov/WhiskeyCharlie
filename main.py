@@ -53,7 +53,6 @@ class Encounter(db.Model):
 
 
 @app.route('/')
-@app.route('index.html')
 def browse():
     return flask.render_template('index.html',people=Person.query.all(),encounters=Encounter.query.all())
 
