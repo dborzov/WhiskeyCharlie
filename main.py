@@ -50,11 +50,14 @@ class Encounter(db.Model):
         return '{Yoyo %r}' % self.username
 
 
+@app.route('/index.html')
+def landing():
+    return flask.render_template('index.html',people=Person.query.all(),encounters=Encounter.query.all())
 
 
 @app.route('/')
-def browse():
-    return flask.render_template('index.html',people=Person.query.all(),encounters=Encounter.query.all())
+def rootdomain():
+    return redirect(url_for('landing'))
 
 
 @app.route('/magic.html')
