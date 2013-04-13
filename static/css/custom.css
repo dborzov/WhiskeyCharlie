@@ -1,0 +1,7 @@
+body .modal {
+  width: 70%; /* desired relative width */
+  height: 70%;
+  left: 15%; /* (100%-width)/2 */
+  top:15%;
+  margin: auto auto auto auto; /* place center */
+}

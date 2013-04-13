@@ -53,71 +53,15 @@ class Encounter(db.Model):
 
 
 @app.route('/')
+@app.route('index.html')
 def browse():
     return flask.render_template('index.html',people=Person.query.all(),encounters=Encounter.query.all())
 
 
-@app.route('/participants')
+@app.route('/magic.html')
 def participants():
-    return flask.render_template('users.html',people=Person.query.all())
+    return flask.render_template('magic.html',people=Person.query.all())
 
-
-@app.route('/payments.json')
-def paymentsjson():
-    stringus=[{"surname":person.name} for person in Person.query.all()]
-    return json.dumps(stringus)
-
-
-@app.route('/updates')
-def updates():
-    return flask.render_template('log.html',people=Person.query.all())
-
-@app.route('/encounters')
-def encounters():
-    return flask.render_template('encounters.html',people=Person.query.all(),encounters=Encounter.query.all())
-
-@app.route('/hello')
-def hello():
-    return 'Hello Dima'
-
-@app.route('/hello_db')
-def hello_db():
-    db.create_all()
-    return 'Hello DB'
-
-
-
-@app.route('/add_a_person',methods=['POST'])
-def add_person():
-    new_person=Person(request.form.get('name', 'Not in the request'))
-    db.session.add(new_person)
-    db.session.commit()
-    return redirect(url_for('participants'))
-
-
-@app.route('/api/add_a_person',methods=['POST'])
-def api_add_person():
-    new_person=Person(request.headers.get('name', 'John Lennon'))
-    db.session.add(new_person)
-    db.session.commit()
-    return redirect(url_for('participants'))
-
-
-@app.route('/api/add_an_encounter',methods=['POST'])
-def api_add_encounter():
-    new_encounter=Encounter(request.headers.get('subject', 'Not given'),Person.query.filter_by(id=int(request.headers.get('person','1'))).first())
-    db.session.add(new_encounter)
-    db.session.commit()
-    return redirect(url_for('encounters'))
-
-
-
-@app.route('/add_an_encounter',methods=['POST'])
-def add_encounter():
-    new_encounter=Encounter(request.form.get('subject', 'Not in the request'),Person.query.filter_by(id=int(request.form['person'])).first())
-    db.session.add(new_encounter)
-    db.session.commit()
-    return redirect(url_for('encounters'))
 
 
 if __name__ == '__main__':
