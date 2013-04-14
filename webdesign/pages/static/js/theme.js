@@ -167,11 +167,11 @@ readyState(function()
         backgrounds: [
             { src: 'static/img/bg2.jpg', fade: 2000 },
             { src: 'static/img/bg3.jpg', fade: 2000 },
-            { src: 'static/img/bg2.jpg', fade: 2000 },
+            { src: 'static/img/bg9.jpg', fade: 2000 },
             { src: 'static/img/bg8.jpg', fade: 2000 },
             { src: 'static/img/bg5.jpg', fade: 2000 },
             { src: 'static/img/bg2.jpg', fade: 2000 },
-            { src: 'static/img/bg9.jpg', fade: 2000 },
+            { src: 'static/img/bg3.jpg', fade: 2000 },
             { src: 'static/img/bg8.jpg', fade: 2000 },
             { src: 'static/img/bg9.jpg', fade: 2000 }
         ]
