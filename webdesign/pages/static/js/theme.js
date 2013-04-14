@@ -189,9 +189,12 @@ readyState(function()
     $('.lightbox_trigger').click(function(event)
     {
         event.preventDefault();
-        
-        $('#bigimg').attr({'src':$(this).attr("href")});
+        //$('#bigimg').attr({'src':$(this).attr("href")});
         $('#lightbox').show();
+        var player = document.getElementById("myYouTubePlayer");
+        if(player) {
+            player.playVideo();
+        }
     });
 
     /**

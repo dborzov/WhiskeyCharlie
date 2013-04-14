@@ -42,6 +42,25 @@ a:hover
     text-decoration: none;
 }
 
+
+.dimas
+{
+    color: #ffffff;
+}
+
+.dimon
+{
+    color: #ffffff;
+}
+
+
+.dimas:hover
+{
+    color: #ffd675;
+    text-decoration: none;
+}
+
+
 p, li, span
 {
     line-height: 20px;
@@ -268,6 +287,8 @@ ul
     line-height: 40px;
 }
 
+
+
 /**
  * Features
  */
@@ -339,11 +360,6 @@ ul
     z-index: 100;
 }
 
-#lightbox img
-{
-    max-width: 940px;
-    margin-top: 40px;
-}
 
 /**
  * Google Maps
